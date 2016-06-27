@@ -1,0 +1,13 @@
+#!/bin/sh
+
+table=badhosts
+ip=$1
+
+if [ -z "$ip" ] ; then
+    echo "Usage: $0 ip"
+    echo " Will add ip to dynamic table ($table) that will be blocked by PF"
+    exit 0
+fi
+
+echo "+/sbin/pfctl -t${table} -Tadd $ip"
+/sbin/pfctl -t${table} -Tadd $ip
