@@ -1,3 +1,3 @@
 #!/bin/sh
 
-lsof -i | grep ^tor | awk '{ print $9 }'  | awk -F- '{ print $2 }' | grep '^>' | sort
+lsof -i | awk '/^tor/ { print $9 }'  | awk -F- '{ if ($2 ~ /^>/) { gsub(/^>/, "", $2); print $2 } }' | sort
