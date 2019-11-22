@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # - very minor revision could make not bash-specific, but i only actually use this in my bash startup scripts ~/sh/stopwatch
 # - John Newman jnn@synfin.org
 
